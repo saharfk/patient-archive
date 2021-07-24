@@ -8,7 +8,7 @@ from .forms import NewPatientForm, PatientVisitForm
 from .models import Patient, PatientHistory
 
 
-#@login_required
+@login_required
 def patientHistadd(request, PatientId):
     user = PatientId
 
@@ -20,7 +20,7 @@ def patientHistadd(request, PatientId):
             Description = form.cleaned_data.get('Description')
             picture = form.cleaned_data.get('picture')
 
-            p, created = PatientHistory.objects.get_or_create(PatientId=user, Prescription=Prescription,
+            p, created = PatientHistory.objects.get_or_create(PatientId_id=user, Prescription=Prescription,
                                                               nextVisit=nextVisit, Description=Description,
                                                               picture=picture)
             p.save()
@@ -36,16 +36,17 @@ def patientHistadd(request, PatientId):
     return render(request, 'patienthistory/patientVisitForm.html', context)
 
 
-#@login_required
+@login_required
 def patientList(request):
-    allProfiles = Patient.objects.all()
+    user = request.user.id
+    allProfiles = Patient.objects.filter(drId=user)
 
     context = {'allProfiles': allProfiles}
 
     return render(request, 'patienthistory/patientlist.html', context)
 
 
-##@login_required
+@login_required
 def searchPatientByName(request):
     query = request.GET.get("q")
     context = {}
@@ -67,7 +68,7 @@ def searchPatientByName(request):
     return HttpResponse(template.render(context, request))
 
 
-#@login_required
+@login_required
 def searchPatientById(request):
     query = request.GET.get("q")
     context = {}
@@ -89,7 +90,7 @@ def searchPatientById(request):
     return HttpResponse(template.render(context, request))
 
 
-#@login_required
+@login_required
 def addPatient(request):
     user = request.user.id
 
@@ -106,7 +107,7 @@ def addPatient(request):
             location = form.cleaned_data.get('location')
             illness = form.cleaned_data.get('illness')
 
-            p, created = Patient.objects.get_or_create( first_name=first_name,
+            p, created = Patient.objects.get_or_create(drId_id=user, first_name=first_name,
                                                        last_name=last_name, phone=phone, about=about, email=email,
                                                        Id_card_number=Id_card_number, picture=picture,
                                                        location=location, illness=illness)
