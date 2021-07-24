@@ -1,0 +1,93 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ request.resolver_match.url_name }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="{% static 'patienthistory/style.css' %}">
+    <script src="{% static 'patienthistory/js.js' %}"></script>
+</head>
+<body>
+<div style="min-height: 100%; margin-bottom: -100px;">
+    <nav class="navbar ">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+                <i class="material-icons" style="font-size:48px;">archive</i><b>Archive</b>
+            </a>
+
+            <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+      <span class="icon" style="color: #333;">
+        <i class="fa fa-github"></i>
+      </span>
+            </a>
+
+            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+      <span class="icon" style="color: #55acee;">
+        <i class="fa fa-twitter"></i>
+      </span>
+            </a>
+
+            <div class="navbar-burger burger" data-target="navMenubd-example">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenubd-example" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{% url 'home' %}">
+                        Home
+                    </a>
+
+                    <a class="navbar-item" href="{% url 'patientList' %}">
+                        Patient List
+                    </a>
+
+{#                    <a class="navbar-item" href="{% url 'patientHist' %}">#}
+{#                        Patient History#}
+{#                    </a>#}
+
+                    <a class="navbar-item" href="{% url 'searchPatientByName' %}">
+                        Search Patient
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a href="#" class="bd-tw-button button">
+                                <span>Log Out</span>
+                            </a>
+
+                        </p>
+                        <div class="buttons">
+                            <a class="button is-primary" href="{% url 'addPatient' %}">
+                                <strong>Add New Patient</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="notification is-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+
+</html>

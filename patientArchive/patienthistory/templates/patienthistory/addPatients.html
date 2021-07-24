@@ -1,0 +1,118 @@
+{% extends 'patienthistory/base.html' %}
+
+{% block content %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-mobile has-text-centered">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+
+                        <h3 class="title is-3">add patient</h3>
+
+                        <div class="card-content">
+
+
+                            <form method="post" action="" role="form">
+                                {% csrf_token %}
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">first name :</label>
+                                        {{ form.first_name }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">last name :</label>
+                                        {{ form.last_name }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">Id card number :</label>
+                                        {{ form.Id_card_number }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">phone :</label>
+                                        {{ form.phone }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">email :</label>
+                                        {{ form.email }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">location :</label>
+                                        {{ form.location }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">illness :</label>
+                                        {{ form.illness }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">about :</label>
+                                        {{ form.about }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">picture :</label>
+                                        {{ form.picture }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <span style="color: red; font-weight: bold;">{{ form.errors }}</span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <button type="submit" name="action" class="button is-success">
+                                            SignUp
+                                        </button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

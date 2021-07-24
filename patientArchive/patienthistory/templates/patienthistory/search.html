@@ -1,0 +1,52 @@
+{% extends 'patienthistory/base.html' %}
+{% block content %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <div class="column">
+                    <nav class="panel"
+                         style="background: rgb(235,235,235);background: linear-gradient(90deg, rgba(235,235,235,1) 0%, rgba(211,211,213,1) 35%, rgba(178,203,249,1) 100%);">
+                        <p class="panel-heading">
+                            Search For Patient
+                        </p>
+                        <p class="panel-tabs">
+                        {% if request.resolver_match.url_name == 'searchPatientById' %}
+                           <a href="{% url 'searchPatientByName'%}">Name</a>
+                            <a class="is-active"
+                               href="{% url 'searchPatientById'%}">id</a>
+                            {% else %}
+                             <a class="is-active"
+                               href="{% url 'searchPatientByName'%}">Name</a>
+
+                            <a href="{% url 'searchPatientById'%}">id</a>
+                        {% endif %}
+
+                        </p>
+                        <form>
+                            <div class="panel-block">
+                                <p class="control has-icons-left">
+                                    <input class="input " name="q" type="text" placeholder="Search" style="width: 80%"
+                                           value="{{ request.GET.q }}">
+                                    <button class="is-half button is-link is-outlined"
+                                            style="width:18%; display: inline"
+                                            type="submit">
+                                        SEARCH
+                                    </button>
+
+                                </p>
+                            </div>
+                        </form>
+                        {% for user in users %}
+                            <a class="panel-block is-active" href="#">
+                                <b>first name : </b>{{ user.first_name }}<b> / id card number :</b>  {{ user.Id_card_number }}
+                            </a>
+                        {% endfor %}
+
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

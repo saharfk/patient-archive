@@ -1,0 +1,73 @@
+{% extends 'patienthistory/base.html' %}
+
+{% block content %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-mobile has-text-centered">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+
+                        <h3 class="title is-3">SignUp</h3>
+
+                        <div class="card-content">
+
+
+                            <form method="post" action="" role="form">
+                                {% csrf_token %}
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">Username :</label>
+                                        {{ form.username }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <label class="label is-medium">Email :</label>
+                                        {{ form.email }}
+                                        <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                    </p>
+                                </div>
+                                  <div class="field">
+                                <p class="control has-icons-left">
+                                    <label class="label is-medium">Password :</label>
+                                    {{ form.password }}
+                                    <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="field">
+                                <p class="control has-icons-left">
+                                    <label class="label is-medium">Confirm Password :</label>
+                                    {{ form.confirm_password }}
+                                    <span class="icon is-small is-left">
+                                      <i class="fas fa-lock"></i>
+                                    </span>
+                                </p>
+                            </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <span style="color: red; font-weight: bold;">{{ form.errors }}</span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <button type="submit" name="action" class="button is-success">
+                                            SignUp
+                                        </button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
