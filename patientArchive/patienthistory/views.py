@@ -48,11 +48,12 @@ def patientList(request):
 
 @login_required
 def searchPatientByName(request):
+    user = request.user.id
     query = request.GET.get("q")
     context = {}
 
     if query:
-        users = Patient.objects.filter(Q(first_name__icontains=query))
+        users = Patient.objects.filter(Q(first_name__icontains=query), drId=user)
 
         # Pagination
         paginator = Paginator(users, 6)

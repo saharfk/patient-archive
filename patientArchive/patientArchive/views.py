@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'patienthistory/home.html')
+    if request.user.is_authenticated:
+        return render(request, 'patienthistory/home.html')
+    else:
+        return render(request, 'patienthistory/login.html')
+
