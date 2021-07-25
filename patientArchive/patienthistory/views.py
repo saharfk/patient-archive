@@ -123,3 +123,15 @@ def addPatient(request):
     }
 
     return render(request, 'patienthistory/addPatients.html', context)
+
+
+@login_required
+def PatientHistoryview(request, PatientId):
+    user = PatientId
+    allhistories = PatientHistory.objects.filter(PatientId_id=user)
+    username = Patient.objects.get(id=user)
+    context = {'allhistories': allhistories,
+               'username': username
+               }
+
+    return render(request, 'patienthistory/patienthis.html', context)

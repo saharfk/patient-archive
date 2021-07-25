@@ -33,7 +33,7 @@
                                     <tbody>
                                     {% for Profile in allProfiles %}
                                         <tr>
-                                            <td><a href="{% url 'patientHistadd' Profile.id %}">
+                                            <td><a href="{% url 'patientHist' Profile.id %}">
                                                 {{ Profile.first_name }}</a></td>
                                             <td>{{ Profile.last_name }}</td>
                                             <td>{{ Profile.Id_card_number }}</td>

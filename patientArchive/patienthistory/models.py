@@ -33,3 +33,5 @@ class PatientHistory(models.Model):
 
     def __str__(self):
         return f'Patient {self.PatientId.first_name}\'s visit on {self.VisitDate}'
+
+# %Y-%m-%d %H:%M:%S
