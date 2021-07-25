@@ -31,7 +31,7 @@
                                     {% for history in allhistories %}
                                         <tr>
 
-                                            <td>{{ history.VisitDate }}</td>
+                                            <td><b><a href="{% url 'Prescription' history.id %}">{{ history.VisitDate }}</a></b></td>
 
                                         </tr>
                                     {% endfor %}

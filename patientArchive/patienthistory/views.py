@@ -135,3 +135,14 @@ def PatientHistoryview(request, PatientId):
                }
 
     return render(request, 'patienthistory/patienthis.html', context)
+
+
+@login_required
+def Prescription(request, history):
+    history = PatientHistory.objects.get(id=history)
+    username = Patient.objects.get(id=history.PatientId_id)
+    context = {'history': history,
+               'username': username
+               }
+
+    return render(request, 'patienthistory/Prescription.html', context)

@@ -1,10 +1,8 @@
 from django.db import models
-import uuid
 from django.contrib.auth.models import User
 
 
 class Patient(models.Model):
-    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     drId = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
@@ -18,9 +16,6 @@ class Patient(models.Model):
 
     def __str__(self):
         return f'{self.first_name} for dr.{self.drId.username} / id: {self.Id_card_number}'
-
-    # def get_absolute_url(self):
-    #     return reverse('postdetails', args=[str(self.id)])
 
 
 class PatientHistory(models.Model):

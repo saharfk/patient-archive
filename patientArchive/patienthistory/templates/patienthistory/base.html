@@ -68,12 +68,14 @@
                             </a>
 
                         </p>
+                        {% if request.resolver_match.url_name == 'patientHist' %}
                         <p class="control">
-                            <a href="{% url 'logout' %}" class="bd-tw-button button">
+                            <a href="{% url 'patientHistadd' username.id %}" class="bd-tw-button button">
                                 <span>Add Prescription</span>
                             </a>
 
                         </p>
+                        {% endif %}
                         <div class="buttons">
                             <a class="button is-primary" href="{% url 'addPatient' %}">
                                 <strong>Add New Patient</strong>

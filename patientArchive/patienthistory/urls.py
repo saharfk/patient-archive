@@ -8,4 +8,5 @@ urlpatterns = [
     path('add/', views.addPatient, name='addPatient'),
     path('<PatientId>/addVisit', views.patientHistadd, name='patientHistadd'),
     path('<PatientId>/history', views.PatientHistoryview, name='patientHist'),
+    path('<history>/Prescription', views.Prescription, name='Prescription'),
 ]
