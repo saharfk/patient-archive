@@ -6,12 +6,14 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .forms import NewPatientForm, PatientVisitForm
 from .models import Patient, PatientHistory
+from django.core.mail import send_mail
+from django.contrib.auth.models import User
 
 
 @login_required
 def patientHistadd(request, PatientId):
     user = PatientId
-
+    doctor = request.user.id
     if request.method == "POST":
         form = PatientVisitForm(request.POST, request.FILES)
         if form.is_valid():
@@ -24,6 +26,28 @@ def patientHistadd(request, PatientId):
                                                               nextVisit=nextVisit, Description=Description,
                                                               picture=picture)
             p.save()
+
+            doctorName = User.objects.get(id=doctor).username
+
+            if nextVisit:
+                message = 'Hello dear ' + Patient.objects.get(
+                    id=user).first_name + '\nyour Prescriptions are : ' + Prescription + \
+                          '\nplease take your medicines from the nearest pharmacy.' \
+                          '\nyour next appointment is on ' + \
+                          nextVisit + ' set an appointment on this time for yourself.\n thanks for your attention.'
+            else:
+                message = 'Hello dear ' + Patient.objects.get(
+                    id=user).first_name + '\nyour Prescriptions are : ' + Prescription + \
+                          '\nplease take your medicines from the nearest pharmacy.' \
+                          '\n thanks for your attention.'
+            send_mail(
+                'appointment with dr.' + doctorName,
+                message,
+                'pnsgroupproject@gmail.com',
+                [Patient.objects.get(id=user).email],
+
+            )
+
             return redirect('home')
 
     else:
