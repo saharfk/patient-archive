@@ -2,6 +2,10 @@ from django import forms
 from .models import Patient
 
 
+class dateInput(forms.DateInput):
+    input_type = 'date'
+
+
 class NewPatientForm(forms.ModelForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'input is-medium'}), max_length=50,
                                  required=True)
@@ -12,7 +16,7 @@ class NewPatientForm(forms.ModelForm):
     about = forms.CharField(widget=forms.Textarea(attrs={'class': 'input is-medium'}), max_length=30,
                             required=False)
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'input is-medium'}), max_length=100,
-                             required=True)
+                             required=False)
     Id_card_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'input is-medium'}),
                                      required=True)
     picture = forms.ImageField(required=False)
@@ -30,7 +34,7 @@ class NewPatientForm(forms.ModelForm):
 class PatientVisitForm(forms.ModelForm):
     Prescription = forms.CharField(widget=forms.Textarea(attrs={'class': 'input is-medium'}), max_length=300,
                                    required=True)
-    nextVisit = forms.DateTimeField(required=False)
+    nextVisit = forms.CharField(required=False, widget=dateInput, max_length=30)
     Description = forms.CharField(widget=forms.Textarea(attrs={'class': 'input is-medium'}), max_length=300,
                                   required=False)
     picture = forms.ImageField(required=False)

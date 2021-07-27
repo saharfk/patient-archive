@@ -21,7 +21,7 @@ class Patient(models.Model):
 class PatientHistory(models.Model):
     PatientId = models.ForeignKey(Patient, on_delete=models.CASCADE, blank=True, null=True)
     Prescription = models.TextField(max_length=300, null=True, blank=True)
-    nextVisit = models.DateTimeField(null=True, blank=True)
+    nextVisit = models.CharField(null=True, blank=True, max_length=30)
     picture = models.ImageField(upload_to='profile_pics', blank=True, null=True, verbose_name='Picture')
     VisitDate = models.DateTimeField(auto_now_add=True, blank=True)
     Description = models.TextField(max_length=300, null=True, blank=True)

@@ -28,25 +28,25 @@ def patientHistadd(request, PatientId):
             p.save()
 
             doctorName = User.objects.get(id=doctor).username
+            if Patient.objects.get(id=user).email:
+                if nextVisit:
+                    message = 'Hello dear ' + Patient.objects.get(
+                        id=user).first_name + '\nyour Prescriptions are : ' + Prescription + \
+                              '\nplease take your medicines from the nearest pharmacy.' \
+                              '\nyour next appointment is on ' + \
+                              nextVisit + ' set an appointment on this time for yourself.\nthanks for your attention.'
+                else:
+                    message = 'Hello dear ' + Patient.objects.get(
+                        id=user).first_name + '\nyour Prescriptions are : ' + Prescription + \
+                              '\nplease take your medicines from the nearest pharmacy.' \
+                              '\nthanks for your attention.'
+                send_mail(
+                    'appointment with dr.' + doctorName,
+                    message,
+                    'pnsgroupproject@gmail.com',
+                    [Patient.objects.get(id=user).email],
 
-            if nextVisit:
-                message = 'Hello dear ' + Patient.objects.get(
-                    id=user).first_name + '\nyour Prescriptions are : ' + Prescription + \
-                          '\nplease take your medicines from the nearest pharmacy.' \
-                          '\nyour next appointment is on ' + \
-                          nextVisit + ' set an appointment on this time for yourself.\n thanks for your attention.'
-            else:
-                message = 'Hello dear ' + Patient.objects.get(
-                    id=user).first_name + '\nyour Prescriptions are : ' + Prescription + \
-                          '\nplease take your medicines from the nearest pharmacy.' \
-                          '\n thanks for your attention.'
-            send_mail(
-                'appointment with dr.' + doctorName,
-                message,
-                'pnsgroupproject@gmail.com',
-                [Patient.objects.get(id=user).email],
-
-            )
+                )
 
             return redirect('home')
 
@@ -95,11 +95,12 @@ def searchPatientByName(request):
 
 @login_required
 def searchPatientById(request):
+    user = request.user.id
     query = request.GET.get("q")
     context = {}
 
     if query:
-        users = Patient.objects.filter(Q(Id_card_number__icontains=query))
+        users = Patient.objects.filter(Q(Id_card_number__icontains=query), drId=user)
 
         # Pagination
         paginator = Paginator(users, 6)
