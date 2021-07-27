@@ -8,7 +8,7 @@ from .forms import NewPatientForm, PatientVisitForm
 from .models import Patient, PatientHistory
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
-
+from django.contrib import messages
 
 @login_required
 def patientHistadd(request, PatientId):
@@ -47,7 +47,7 @@ def patientHistadd(request, PatientId):
                     [Patient.objects.get(id=user).email],
 
                 )
-
+            messages.success(request, f'new history added successfully!')
             return redirect('home')
 
     else:
@@ -138,6 +138,8 @@ def addPatient(request):
                                                        Id_card_number=Id_card_number, picture=picture,
                                                        location=location, illness=illness)
             p.save()
+
+            messages.success(request, f'new patient added successfully!')
             return redirect('home')
 
     else:

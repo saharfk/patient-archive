@@ -4,15 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ request.resolver_match.url_name }}</title>
-    <link rel="icon" href="{% static 'patienthistory/img/outline_archive_white_24dp.png' %}" type="image/gif" sizes="20x20">
+    <link rel="icon" href="{% static 'patienthistory/img/outline_archive_white_24dp.png' %}" type="image/gif"
+          sizes="20x20">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="{% static 'patienthistory/style.css' %}">
     <script src="{% static 'patienthistory/js.js' %}"></script>
 </head>
-<body>
+{% if request.resolver_match.url_name == 'home' %}
+    <body>
+{% else %}
+    <body style="background: rgb(184,194,241);
+background: linear-gradient(90deg, rgba(184,194,241,1) 0%, rgba(246,246,246,0.9808298319327731) 50%, rgba(184,193,235,1) 100%);">
+{% endif %}
 <div style="min-height: 100%; margin-bottom: -100px;">
-    <nav class="navbar ">
+    <nav class="navbar " style="background: rgba(255,255,255,0.4);">
         <div class="navbar-brand">
             <a class="navbar-item" href="{% url 'home' %}">
                 <i class="material-icons" style="font-size:48px;">archive</i><b>Archive</b>
@@ -48,10 +54,6 @@
                         Patient List
                     </a>
 
-                    {#                    <a class="navbar-item" href="{% url 'patientHist' %}">#}
-                    {#                        Patient History#}
-                    {#                    </a>#}
-
                     <a class="navbar-item" href="{% url 'searchPatientByName' %}">
                         Search Patient
                     </a>
@@ -64,24 +66,27 @@
                 <div class="navbar-item">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a href="{% url 'logout' %}" class="bd-tw-button button">
-                                <span>Log Out</span>
+                            <a href="{% url 'logout' %}" class="bd-tw-button button is-danger is-outlined">
+                                <strong>Log Out</strong>
                             </a>
 
                         </p>
                         {% if request.resolver_match.url_name == 'patientHist' %}
-                            <p class="control">
-                                <a href="{% url 'patientHistadd' username.id %}" class="bd-tw-button button">
-                                    <span>Add Prescription</span>
+                            <p class="control ">
+                                <a href="{% url 'patientHistadd' username.id %}"
+                                   class="bd-tw-button button is-primary is-outlined">
+                                    <strong>Add Prescription</strong>
                                 </a>
 
                             </p>
                         {% endif %}
-                        <div class="buttons">
-                            <a class="button is-primary" href="{% url 'addPatient' %}">
+                        <p class="control ">
+                            <a href="{% url 'addPatient' %}" class="button is-info is-outlined">
                                 <strong>Add New Patient</strong>
                             </a>
-                        </div>
+
+                        </p>
+
 
                     </div>
                 </div>
@@ -91,7 +96,10 @@
 
     {% if messages %}
         {% for message in messages %}
-            <div class="notification is-success">{{ message }}</div>
+            <div class="notification is-success" style="margin: 0px;!important;">
+                <span class="delete" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+            </div>
         {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}
