@@ -30,9 +30,11 @@
                                         {% endif %}
                                         {% if history.picture %}
                                             <b>picture: </b>
-                                            <img
-                                                    src="{{ history.picture.url }}"
-                                                    alt="Image">
+                                            <a href="{{ history.picture.url }}">
+                                                <img class="image is-128x128"
+                                                     src="{{ history.picture.url }}"
+                                                     alt="Image">
+                                            </a>
                                         {% endif %}
                                     </div>
                                 </div>

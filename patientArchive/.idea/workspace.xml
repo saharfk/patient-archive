@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="07d9e095-86e4-4d56-a376-3302ceab9793" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patientArchive/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/patientArchive/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patientArchive/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/patientArchive/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patientArchive/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/patientArchive/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/templates/patienthistory/addPatients.html" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/templates/patienthistory/addPatients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/templates/patienthistory/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/templates/patienthistory/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/templates/patienthistory/patientVisitForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/templates/patienthistory/patientVisitForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/templates/patienthistory/patienthis.html" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/templates/patienthistory/patienthis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/templates/patienthistory/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/templates/patienthistory/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patienthistory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/patienthistory/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/patientArchive/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
+            <state relative-caret-position="276">
+              <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
               <folding>
                 <element signature="e#316#325#0" expanded="true" />
               </folding>
@@ -40,37 +29,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/patienthistory/views.py">
+        <entry file="file://$PROJECT_DIR$/../../New folder/instagramCloneProject/instagram_clone/instagram_clone/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28">
-              <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
+            <state relative-caret-position="176">
+              <caret line="116" column="41" lean-forward="true" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="41" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#figure#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/patienthistory/models.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/patienthistory/templates/patienthistory/patienthis.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="12" column="114" selection-start-line="12" selection-start-column="114" selection-end-line="12" selection-end-column="114" />
-              <folding>
-                <element signature="e#327#353#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="303">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -120,7 +94,6 @@
         <option value="$PROJECT_DIR$/patienthistory/models.py" />
         <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/home.html" />
         <option value="$PROJECT_DIR$/patientArchive/views.py" />
-        <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html" />
         <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/addPatients.html" />
         <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/patientVisitForm.html" />
         <option value="$PROJECT_DIR$/patientArchive/urls.py" />
@@ -128,6 +101,7 @@
         <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/search.html" />
         <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/patienthis.html" />
         <option value="$PROJECT_DIR$/patientArchive/settings.py" />
+        <option value="$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html" />
       </list>
     </option>
   </component>
@@ -158,6 +132,19 @@
             <path>
               <item name="patientArchive" type="b2602c69:ProjectViewProjectNode" />
               <item name="patientArchive" type="462c0819:PsiDirectoryNode" />
+              <item name="patienthistory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patientArchive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patientArchive" type="462c0819:PsiDirectoryNode" />
+              <item name="patienthistory" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patientArchive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patientArchive" type="462c0819:PsiDirectoryNode" />
+              <item name="patienthistory" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="patienthistory" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -229,12 +216,12 @@
       <workItem from="1627314802064" duration="1924000" />
       <workItem from="1627377491811" duration="12258000" />
       <workItem from="1627393597801" duration="1577000" />
-      <workItem from="1627462433470" duration="1546000" />
+      <workItem from="1627462433470" duration="2149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44487000" />
+    <option name="totallyTimeSpent" value="45090000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -440,16 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../New folder/instagramCloneProject/instagram_clone/instagram_clone/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="118" column="71" selection-start-line="118" selection-start-column="71" selection-end-line="121" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#figure#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../New folder/instagramCloneProject/instagram_clone/instagram_clone/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1459">
@@ -474,13 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -574,11 +544,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/patientArchive/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
+        <state relative-caret-position="276">
+          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
           <folding>
             <element signature="e#316#325#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../New folder/instagramCloneProject/instagram_clone/instagram_clone/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="116" column="41" lean-forward="true" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#figure#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/patienthistory/templates/patienthistory/Prescription.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
         </state>
       </provider>
     </entry>
