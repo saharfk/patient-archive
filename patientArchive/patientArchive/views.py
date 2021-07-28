@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.template import loader
 
@@ -14,4 +14,4 @@ def index(request):
 
         return HttpResponse(template.render(context, request))
     else:
-        return render(request, 'patienthistory/login.html')
+        return redirect('login')

@@ -39,7 +39,7 @@
                         </form>
                         {% for user in users %}
                             <a class="panel-block is-active" href="{% url 'patientHist' user.id %}">
-                                <b>first name : </b>{{ user.first_name }}<b> / id card number :</b>  {{ user.Id_card_number }}
+                                <b>name : </b>{{ user.first_name }} {{ user.last_name }}<b> / id card number :</b>  {{ user.Id_card_number }}
                             </a>
                         {% endfor %}
 

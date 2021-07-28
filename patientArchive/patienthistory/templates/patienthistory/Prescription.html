@@ -18,18 +18,21 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="content">
-                                       <b> patient name : </b>{{ username.first_name }} {{ username.last_name }} <br>
-                                       <b>patient id card :</b>  {{ username.Id_card_number }} <br>
+                                        <b> patient name : </b>{{ username.first_name }} {{ username.last_name }} <br>
+                                        <b>patient id card :</b> {{ username.Id_card_number }} <br>
                                         <b>Prescription :</b> {{ history.Prescription }} <br>
-                                       <b>Visit Date: </b> {{ history.VisitDate }} <br>
+                                        <b>Visit Date: </b> {{ history.VisitDate }} <br>
                                         {% if history.nextVisit %}
-                                           <b>next Visit: </b> {{ history.nextVisit }}<br>
+                                            <b>next Visit: </b> {{ history.nextVisit }}<br>
                                         {% endif %}
                                         {% if history.Description %}
-                                           <b>Description : </b> {{ history.Description }} <br>
+                                            <b>Description : </b> {{ history.Description }} <br>
                                         {% endif %}
                                         {% if history.picture %}
-                                           <b>picture: </b> {{ history.picture }}
+                                            <b>picture: </b>
+                                            <img
+                                                    src="{{ history.picture.url }}"
+                                                    alt="Image">
                                         {% endif %}
                                     </div>
                                 </div>

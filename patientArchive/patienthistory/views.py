@@ -63,7 +63,7 @@ def patientHistadd(request, PatientId):
 @login_required
 def patientList(request):
     user = request.user.id
-    allProfiles = Patient.objects.filter(drId=user)
+    allProfiles = Patient.objects.filter(drId=user).order_by('first_name')
 
     context = {'allProfiles': allProfiles}
 
@@ -77,7 +77,7 @@ def searchPatientByName(request):
     context = {}
 
     if query:
-        users = Patient.objects.filter(Q(first_name__icontains=query), drId=user)
+        users = Patient.objects.filter(Q(first_name__icontains=query), drId=user).order_by('first_name')
 
         # Pagination
         paginator = Paginator(users, 6)
@@ -100,7 +100,7 @@ def searchPatientById(request):
     context = {}
 
     if query:
-        users = Patient.objects.filter(Q(Id_card_number__icontains=query), drId=user)
+        users = Patient.objects.filter(Q(Id_card_number__icontains=query), drId=user).order_by('Id_card_number')
 
         # Pagination
         paginator = Paginator(users, 6)
@@ -155,7 +155,7 @@ def addPatient(request):
 @login_required
 def PatientHistoryview(request, PatientId):
     user = PatientId
-    allhistories = PatientHistory.objects.filter(PatientId_id=user)
+    allhistories = PatientHistory.objects.filter(PatientId_id=user).order_by('-VisitDate')
     username = Patient.objects.get(id=user)
     context = {'allhistories': allhistories,
                'username': username
