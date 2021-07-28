@@ -1,6 +1,6 @@
 # patient-archive
 **Creator** : [saharfk](https://github.com/saharfk)
-
+temprorary site address : http://saharfk.pythonanywhere.com/
 doctors can signup in this page and easily add their patients and prescriptions 
 after doctors write their prescriptions and upload it to the server, an email will be sent to the patients to inform them 
 
