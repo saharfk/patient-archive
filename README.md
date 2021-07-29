@@ -1,6 +1,8 @@
 # patient-archive
 ### Creator : [saharfk](https://github.com/saharfk)
 
+### supervisor : dr.ahmadifar 
+
 ### temprorary site address : http://saharfk.pythonanywhere.com/
 
 doctors can signup in this page and easily add their patients and prescriptions 
